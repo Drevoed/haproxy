@@ -6,6 +6,60 @@
 
 FROM alpine:3.14
 
+RUN set -eux; \
+    	apk add --no-cache --virtual .build-deps \
+    		gcc \
+            g++ \
+    		libc-dev \
+    		linux-headers \
+    		lua5.3-dev \
+        curl-dev \
+            cmake \
+    		make \
+    		openssl \
+    		openssl-dev \
+    		pcre2-dev \
+    		readline-dev \
+    		tar \
+            git \
+            autoconf \
+            automake \
+            gawk \
+            binutils \
+            libtool \
+            pkgconf \
+    	;
+
+RUN set -eux; \
+    wget https://github.com/opentracing/opentracing-cpp/archive/v1.6.0.tar.gz; \
+    tar xf v1.6.0.tar.gz; \
+    cd opentracing-cpp-1.6.0; \
+    mkdir build; \
+    cd build; \
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local ..;\
+    make; \
+    make install; \
+    cd ../..;
+
+RUN set -eux; \
+    git clone https://github.com/haproxytech/opentracing-c-wrapper.git; \
+    cd opentracing-c-wrapper; \
+    ./scripts/bootstrap; \
+    ./configure --prefix=/usr/local --with-opentracing=/usr/local; \
+    make; \
+    make install; \
+    cd ..;
+
+RUN set -eux; \
+    git clone https://github.com/rnburn/zipkin-cpp-opentracing; \
+    cd zipkin-cpp-opentracing; \
+    mkdir build; \
+    cd build; \
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_PLUGIN=true ..;\
+    make; \
+    make install; \
+    cd ../../;
+
 # roughly, https://git.alpinelinux.org/aports/tree/main/haproxy/haproxy.pre-install?h=3.12-stable
 RUN set -eux; \
 	addgroup --gid 99 --system haproxy; \
@@ -27,20 +81,6 @@ ENV HAPROXY_SHA256 52af97f72f22ffd8a7a995fafc696291d37818feda50a23caef7dc0622421
 
 # see https://sources.debian.net/src/haproxy/jessie/debian/rules/ for some helpful navigation of the possible "make" arguments
 RUN set -eux; \
-	\
-	apk add --no-cache --virtual .build-deps \
-		gcc \
-		libc-dev \
-		linux-headers \
-		lua5.3-dev \
-		make \
-		openssl \
-		openssl-dev \
-		pcre2-dev \
-		readline-dev \
-		tar \
-	; \
-	\
 	wget -O haproxy.tar.gz "$HAPROXY_URL"; \
 	echo "$HAPROXY_SHA256 *haproxy.tar.gz" | sha256sum -c; \
 	mkdir -p /usr/src/haproxy; \
@@ -54,6 +94,7 @@ RUN set -eux; \
 		USE_OPENSSL=1 \
 		USE_PCRE2=1 USE_PCRE2_JIT=1 \
 		USE_PROMEX=1 \
+        USE_OT=1 \
 		\
 		EXTRA_OBJS=" \
 		" \
