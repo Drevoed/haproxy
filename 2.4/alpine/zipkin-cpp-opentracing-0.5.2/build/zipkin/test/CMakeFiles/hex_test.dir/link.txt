@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/hex_test.dir/hex_test.cc.o  -o hex_test  -Wl,-rpath,/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin ../libzipkin.so.0.5.2 -pthread -lcurl 

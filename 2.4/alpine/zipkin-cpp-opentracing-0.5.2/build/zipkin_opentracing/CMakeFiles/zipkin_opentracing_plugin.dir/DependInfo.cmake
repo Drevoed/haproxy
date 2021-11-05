@@ -1,0 +1,35 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/zipkin_opentracing/src/dynamic_load.cc" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/src/dynamic_load.cc.o"
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/zipkin_opentracing/src/opentracing.cc" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/src/opentracing.cc.o"
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/zipkin_opentracing/src/propagation.cc" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/src/propagation.cc.o"
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/zipkin_opentracing/src/sampling.cc" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/src/sampling.cc.o"
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/zipkin_opentracing/src/tracer_factory.cc" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/src/tracer_factory.cc.o"
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/zipkin_opentracing/src/utility.cc" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/src/utility.cc.o"
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/tracer_configuration_schema.cpp" "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin_opentracing/CMakeFiles/zipkin_opentracing_plugin.dir/tracer_configuration_schema.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "zipkin_opentracing_plugin_EXPORTS"
+  )
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../zipkin/include"
+  "../zipkin_opentracing/include"
+  "../3rd_party/include"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/miron/CLionProjects/haproxy/2.4/alpine/zipkin-cpp-opentracing-0.5.2/build/zipkin/CMakeFiles/zipkin-plugin-static.dir/DependInfo.cmake"
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libzipkin_opentracing.a  CMakeFiles/zipkin_opentracing-static.dir/src/utility.cc.o CMakeFiles/zipkin_opentracing-static.dir/src/propagation.cc.o CMakeFiles/zipkin_opentracing-static.dir/src/dynamic_load.cc.o CMakeFiles/zipkin_opentracing-static.dir/src/tracer_factory.cc.o CMakeFiles/zipkin_opentracing-static.dir/src/opentracing.cc.o CMakeFiles/zipkin_opentracing-static.dir/src/sampling.cc.o CMakeFiles/zipkin_opentracing-static.dir/tracer_configuration_schema.cpp.o
+/usr/bin/ranlib libzipkin_opentracing.a

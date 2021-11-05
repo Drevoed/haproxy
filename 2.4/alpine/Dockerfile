@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.14
+FROM alpine:3.12
 
 RUN set -eux; \
     	apk add --no-cache --virtual .build-deps \
@@ -23,7 +23,8 @@ RUN set -eux; \
     		tar \
             git \
             autoconf \
-            automake \
+            automake  \
+            ip6tables \
             gawk \
             binutils \
             libtool \
@@ -31,9 +32,9 @@ RUN set -eux; \
     	;
 
 RUN set -eux; \
-    wget https://github.com/opentracing/opentracing-cpp/archive/v1.6.0.tar.gz; \
-    tar xf v1.6.0.tar.gz; \
-    cd opentracing-cpp-1.6.0; \
+    wget https://github.com/opentracing/opentracing-cpp/archive/v1.5.0.tar.gz; \
+    tar xf v1.5.0.tar.gz; \
+    cd opentracing-cpp-1.5.0; \
     mkdir build; \
     cd build; \
     cmake -DCMAKE_INSTALL_PREFIX=/usr/local ..;\
@@ -89,7 +90,7 @@ RUN set -eux; \
 	rm haproxy.tar.gz; \
 	\
 	makeOpts=' \
-		TARGET=linux-musl \
+		TARGET=linux-glibc \
 		USE_GETADDRINFO=1 \
 		USE_LUA=1 LUA_INC=/usr/include/lua5.3 LUA_LIB=/usr/lib/lua5.3 \
 		USE_OPENSSL=1 \

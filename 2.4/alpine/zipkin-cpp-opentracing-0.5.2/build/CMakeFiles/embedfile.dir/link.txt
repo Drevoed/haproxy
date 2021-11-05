@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/embedfile.dir/3rd_party/embedfile/src/embedfile.c.o  -o embedfile 
